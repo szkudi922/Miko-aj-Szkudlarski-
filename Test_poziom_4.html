@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pytania i Odpowiedzi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question">
+        <h3>Pytanie: Co to jest blockchain?</h3>
+        <p class="answer">Odpowiedź: Blockchain to technologia umożliwiająca bezpieczne i niezmienne przechowywanie danych.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są podstawowe elementy struktury komputera kwantowego?</h3>
+        <p class="answer">Odpowiedź: Kubity, bramki kwantowe, rejestry kwantowe.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest cyfrowa sygnalizacja obrazu (DSLR)?</h3>
+        <p class="answer">Odpowiedź: DSLR to rodzaj aparatów fotograficznych cyfrowych.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe rodzaje ataków hakerskich?</h3>
+        <p class="answer">Odpowiedź: Ataki z wykorzystaniem malware, ataki typu phishing, ataki na hasła.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest RPA (Robot Process Automation)?</h3>
+        <p class="answer">Odpowiedź: RPA to technologia automatyzacji procesów biznesowych za pomocą robotów programowych.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe rodzaje pamięci komputerowej?</h3>
+        <p class="answer">Odpowiedź: Pamięć RAM, pamięć ROM, pamięć cache.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest machine learning?</h3>
+        <p class="answer">Odpowiedź: Machine learning to dziedzina sztucznej inteligencji, w której komputery uczą się bez konieczności programowania.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy główne składniki karty graficznej?</h3>
+        <p class="answer">Odpowiedź: Procesor graficzny (GPU), pamięć VRAM, złącza wyjściowe.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest edge computing?</h3>
+        <p class="answer">Odpowiedź: Edge computing to model przetwarzania danych, w którym obliczenia są wykonywane blisko źródła danych.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe rodzaje języków programowania?</h3>
+        <p class="answer">Odpowiedź: Języki niskiego poziomu, języki wysokiego poziomu, języki skryptowe.</p>
+    </div>
+
+    <button onclick="showNextAnswer()">Pokaż kolejną odpowiedź</button>
+
+    <script>
+        var currentQuestionIndex = 0;
+        var questions = document.querySelectorAll('.question');
+        var answers = document.querySelectorAll('.answer');
+        var button = document.querySelector('button');
+
+        function showNextAnswer() {
+            if (currentQuestionIndex < questions.length) {
+                answers[currentQuestionIndex].style.display = 'block';
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex === questions.length) {
+                    // Jeśli wszystkie odpowiedzi zostały już pokazane, ukryj przycisk
+                    button.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

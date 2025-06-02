@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pytania i Odpowiedzi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question">
+        <h3>Pytanie: Co to jest komputer?</h3>
+        <p class="answer">Odpowiedź: Komputer to elektroniczne urządzenie przetwarzające dane.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Kto jest uznawany za ojca komputera?</h3>
+        <p class="answer">Odpowiedź: Charles Babbage.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest RAM?</h3>
+        <p class="answer">Odpowiedź: Pamięć RAM (Random Access Memory) to krótkotrwała pamięć operacyjna komputera.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe składniki każdego komputera?</h3>
+        <p class="answer">Odpowiedź: Procesor, pamięć RAM i dysk twardy.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest system operacyjny?</h3>
+        <p class="answer">Odpowiedź: System operacyjny to oprogramowanie zarządzające działaniem komputera.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są najpopularniejsze systemy operacyjne dla komputerów osobistych?</h3>
+        <p class="answer">Odpowiedź: Windows, macOS, Linux.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest plik?</h3>
+        <p class="answer">Odpowiedź: Plik to zbiór danych przechowywanych na dysku twardym.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są podstawowe rodzaje pamięci?</h3>
+        <p class="answer">Odpowiedź: Pamięć RAM, pamięć ROM, pamięć cache.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest procesor?</h3>
+        <p class="answer">Odpowiedź: Procesor to jednostka centralna odpowiedzialna za przetwarzanie danych.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest algorytm?</h3>
+        <p class="answer">Odpowiedź: Algorytm to sekwencja kroków do rozwiązania danego problemu.</p>
+    </div>
+
+    <button onclick="showNextAnswer()">Pokaż kolejną odpowiedź</button>
+
+    <script>
+        var currentQuestionIndex = 0;
+        var questions = document.querySelectorAll('.question');
+        var answers = document.querySelectorAll('.answer');
+        var button = document.querySelector('button');
+
+        function showNextAnswer() {
+            if (currentQuestionIndex < questions.length) {
+                answers[currentQuestionIndex].style.display = 'block';
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex === questions.length) {
+                    // Jeśli wszystkie odpowiedzi zostały już pokazane, ukryj przycisk
+                    button.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

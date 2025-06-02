@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konkurs widzy o komputerach</title>
+
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Lato;
+            background: #ebebeb;
+            text-align: center;
+        }
+
+        #menu {
+            background: #fff;
+        }
+
+        #menu a {
+            padding: 20px 25px;
+            text-decoration: none;
+            color: #111;
+            display: inline-block;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            position: relative;
+            display: inline-block;
+        }
+
+        .child {
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            display: none;
+            background: #ffffff;
+            width: 200px;
+        }
+
+        /*Hover*/
+
+        #menu a:hover {
+            background: #7fc1b1 !important;
+            color: #fff;
+        }
+
+        .parent:hover .child {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <div class="parent">
+            <a href="#">Test</a>
+            <div class="child">
+                <a href="Test_poziom_1.html">Test Poziom 1</a>
+                <a href="Test_poziom_2.html">Test Poziom 2</a>
+                <a href="Test_poziom_3.html">Test Poziom 3</a>
+                <a href="Test_poziom_4.html">Test Poziom 4</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <a href="#">Krzyżówka</a>
+            <div class="child">
+                <a href="Krzyżówka_Poziom1.html">Krzyżówka Poziom 1</a>
+                <a href="Krzyżówka_Poziom2.html">Krzyżówka Poziom 2</a>
+                <a href="Krzyżówka_Poziom3.html">Krzyżówka Poziom 3</a>
+                <a href="Krzyżówka_Poziom4.html">Krzyżówka Poziom 4</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <a href="#">Zagadki</a>
+            <div class="child">
+                <a href="#">Zagadki Poziom 1</a>
+                <a href="#">Zagadki Poziom 2</a>
+                <a href="#">Zagadki Poziom 3</a>
+                <a href="#">Zagadki Poziom 4</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <a href="#">Łamigówki</a>
+            <div class="child">
+                <a href="#">Łamigówki poziom 1</a>
+                <a href="#">Łamigówki poziom 2</a>
+                <a href="#">Łamigówki poziom 3</a>
+                <a href="#">Łamigówki poziom 4</a>
+            </div>
+        </div>
+    </div>
+
+    <h1>Serdecznie witamy na konkursie "Komputery we współczesnym świecie" powyżej znjadują się testy, krzyżówki, zgadywanki i łamigówki po rozwiązaniu ich proszę wysłać odpowiedzi na naszego maila Serdecznie diękujemy za wzięcie udziału 
+    </h1>
+</body>
+
+</html>

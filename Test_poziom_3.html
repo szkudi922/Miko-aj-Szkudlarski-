@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pytania i Odpowiedzi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question">
+        <h3>Pytanie: Jakie są podstawowe komponenty sieci komputerowej?</h3>
+        <p class="answer">Odpowiedź: Komputery, routery, przełączniki.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest protokół komunikacyjny?</h3>
+        <p class="answer">Odpowiedź: Protokół komunikacyjny to zestaw reguł określających sposób komunikacji między urządzeniami w sieci.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są podstawowe typy licencji oprogramowania?</h3>
+        <p class="answer">Odpowiedź: Licencja otwarta, licencja zamknięta, licencja komercyjna.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest baza danych?</h3>
+        <p class="answer">Odpowiedź: Baza danych to zorganizowany zbiór danych przechowywanych w sposób umożliwiający łatwy dostęp i zarządzanie nimi.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe typy komputerów według celu użytkowania?</h3>
+        <p class="answer">Odpowiedź: Komputery osobiste, komputery do gier, komputery biznesowe.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest maszyna wirtualna?</h3>
+        <p class="answer">Odpowiedź: Maszyna wirtualna to emulowane środowisko sprzętowe lub oprogramowanie, które działa na rzeczywistym komputerze.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe rodzaje kopii zapasowych?</h3>
+        <p class="answer">Odpowiedź: Pełna kopia zapasowa, różnicowa kopia zapasowa, incremetalna kopia zapasowa.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest IoT (Internet rzeczy)?</h3>
+        <p class="answer">Odpowiedź: IoT to koncepcja połączenia ze sobą różnych urządzeń za pomocą internetu.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest sztuczna inteligencja?</h3>
+        <p class="answer">Odpowiedź: Sztuczna inteligencja to dziedzina informatyki zajmująca się tworzeniem programów komputerowych zdolnych do inteligentnego zachowania.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe typy ataków sieciowych?</h3>
+        <p class="answer">Odpowiedź: Ataki typu Denial of Service (DoS), ataki typu Man-in-the-Middle, ataki phishing.</p>
+    </div>
+
+    <button onclick="showNextAnswer()">Pokaż kolejną odpowiedź</button>
+
+    <script>
+        var currentQuestionIndex = 0;
+        var questions = document.querySelectorAll('.question');
+        var answers = document.querySelectorAll('.answer');
+        var button = document.querySelector('button');
+
+        function showNextAnswer() {
+            if (currentQuestionIndex < questions.length) {
+                answers[currentQuestionIndex].style.display = 'block';
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex === questions.length) {
+                    // Jeśli wszystkie odpowiedzi zostały już pokazane, ukryj przycisk
+                    button.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

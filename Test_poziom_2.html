@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pytania i Odpowiedzi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question">
+        <h3>Pytanie: Jakie są podstawowe rodzaje komputerów?</h3>
+        <p class="answer">Odpowiedź: Komputery osobiste, serwery, superkomputery.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest oprogramowanie?</h3>
+        <p class="answer">Odpowiedź: Oprogramowanie to zestaw instrukcji komputerowych, które sterują jego działaniem.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są najczęstsze rodzaje ataków komputerowych?</h3>
+        <p class="answer">Odpowiedź: Wirusy, malware, phishing.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest IP address?</h3>
+        <p class="answer">Odpowiedź: IP address (adres IP) to unikalny numer przypisany każdemu urządzeniu podłączonemu do sieci.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest program antywirusowy?</h3>
+        <p class="answer">Odpowiedź: Program antywirusowy to oprogramowanie zaprojektowane do wykrywania, blokowania i usuwania złośliwego oprogramowania.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są trzy podstawowe rodzaje systemów plików?</h3>
+        <p class="answer">Odpowiedź: FAT32, NTFS, exFAT.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest chmurze obliczeniowej?</h3>
+        <p class="answer">Odpowiedź: Chmura obliczeniowa to model dostarczania zasobów komputerowych przez internet.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Jakie są podstawowe kategorie oprogramowania?</h3>
+        <p class="answer">Odpowiedź: Oprogramowanie systemowe, oprogramowanie aplikacyjne, oprogramowanie użytkowe.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest programowanie obiektowe?</h3>
+        <p class="answer">Odpowiedź: Programowanie obiektowe to paradygmat programowania, który opiera się na koncepcji obiektów.</p>
+    </div>
+
+    <div class="question">
+        <h3>Pytanie: Co to jest język programowania?</h3>
+        <p class="answer">Odpowiedź: Język programowania to zestaw reguł i składni służących do napisania programu komputerowego.</p>
+    </div>
+
+    <button onclick="showNextAnswer()">Pokaż kolejną odpowiedź</button>
+
+    <script>
+        var currentQuestionIndex = 0;
+        var questions = document.querySelectorAll('.question');
+        var answers = document.querySelectorAll('.answer');
+        var button = document.querySelector('button');
+
+        function showNextAnswer() {
+            if (currentQuestionIndex < questions.length) {
+                answers[currentQuestionIndex].style.display = 'block';
+                currentQuestionIndex++;
+
+                if (currentQuestionIndex === questions.length) {
+                    // Jeśli wszystkie odpowiedzi zostały już pokazane, ukryj przycisk
+                    button.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

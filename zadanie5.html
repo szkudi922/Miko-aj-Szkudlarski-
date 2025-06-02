@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 5 - Analiza PESEL</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { margin: 10px 0; }
+    canvas { max-width: 600px; }
+  </style>
+</head>
+<body>
+  <h1>Zadanie 5 - Analiza PESEL</h1>
+  <input type="file" id="fileInput" accept=".txt">
+  <pre id="output"></pre>
+  <canvas id="decadeChart"></canvas>
+
+  <script>
+    const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
+    const output = document.getElementById('output');
+    const decadeCounts = {1950: 0, 1960: 0, 1970: 0, 1980: 0, 1990: 0};
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const lines = e.target.result.split(/\r?\n/).filter(Boolean);
+        let grudzien = 0, kobiety = 0, lata = {}, niepoprawne = [];
+
+        lines.forEach(pesel => {
+          const digits = pesel.split('').map(Number);
+          const year = parseInt(pesel.slice(0, 2), 10);
+          const month = parseInt(pesel.slice(2, 4), 10);
+          const day = pesel.slice(4, 6);
+
+          // Rok i miesiąc
+          let fullYear;
+          if (month > 80) fullYear = 1800 + year;
+          else if (month > 60) fullYear = 2200 + year;
+          else if (month > 40) fullYear = 2100 + year;
+          else if (month > 20) fullYear = 2000 + year;
+          else fullYear = 1900 + year;
+
+          const realMonth = month % 20;
+          if (realMonth === 12) grudzien++;
+
+          // Kobieta: 10. cyfra parzysta
+          if (digits[9] % 2 === 0) kobiety++;
+
+          // Lata do statystyk
+          lata[fullYear] = (lata[fullYear] || 0) + 1;
+
+          // Dziesięciolecia
+          if (fullYear >= 1950 && fullYear <= 1999) {
+            const dekada = Math.floor(fullYear / 10) * 10;
+            decadeCounts[dekada]++;
+          }
+
+          // Cyfra kontrolna
+          const controlSum = digits.slice(0, 10).reduce((sum, digit, i) => sum + digit * weights[i], 0);
+          const controlDigit = (10 - (controlSum % 10)) % 10;
+          if (controlDigit !== digits[10]) niepoprawne.push(pesel);
+        });
+
+        // Najczęstszy rok
+        const najczesciej = Object.entries(lata).sort((a, b) => b[1] - a[1])[0][0];
+
+        // Wyjście
+        output.textContent = `a) Urodzonych w grudniu: ${grudzien}\n` +
+                             `b) Kobiet: ${kobiety}\n` +
+                             `c) Rok z największą liczbą urodzeń: ${najczesciej}\n` +
+                             `d) Niepoprawne PESELe:\n${niepoprawne.sort().join("\n")}\n`;
+
+        // Wykres
+        const ctx = document.getElementById('decadeChart').getContext('2d');
+        const total = Object.values(decadeCounts).reduce((a, b) => a + b, 0);
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: Object.keys(decadeCounts),
+            datasets: [{
+              label: '% osób w dekadzie',
+              data: Object.values(decadeCounts).map(v => (v / total * 100).toFixed(2)),
+              backgroundColor: ['#FF6384','#36A2EB','#FFCE56','#4BC0C0','#9966FF']
+            }]
+          },
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: 'Rozkład procentowy urodzonych w dekadach'
+              }
+            }
+          }
+        });
+      };
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+</html>

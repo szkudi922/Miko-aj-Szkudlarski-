@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 4 – Anagramy</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f1f1f1; }
+    input[type="file"] { margin: 10px 0; }
+    button { padding: 8px 16px; margin-top: 10px; }
+    pre { background: #eee; padding: 10px; white-space: pre-wrap; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Anagramy – Zadanie 4 (Matura Informatyka)</h1>
+
+  <p>Wybierz plik <code>anagram.txt</code> z dysku:</p>
+  <input type="file" id="fileInput" accept=".txt">
+
+  <div id="fileStatus"></div>
+
+  <button onclick="process()" disabled id="processBtn">Przetwórz</button>
+  <button onclick="download('odp_4a.txt', odp4a)" disabled id="downloadA">Pobierz odp_4a.txt</button>
+  <button onclick="download('odp_4b.txt', odp4b)" disabled id="downloadB">Pobierz odp_4b.txt</button>
+
+  <h2>Wynik 4a – wszystkie słowa tej samej długości:</h2>
+  <pre id="result4a"></pre>
+
+  <h2>Wynik 4b – co najmniej 3 anagramy:</h2>
+  <pre id="result4b"></pre>
+
+  <script>
+    let fileContent = '';
+    let odp4a = '', odp4b = '';
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        fileContent = e.target.result;
+        document.getElementById('fileStatus').innerText = `Wczytano: ${file.name}`;
+        document.getElementById('processBtn').disabled = false;
+      };
+      reader.readAsText(file, "UTF-8");
+    });
+
+    function process() {
+      const input = fileContent.trim().split('\n');
+      let resultA = [], resultB = [];
+
+      input.forEach(line => {
+        const words = line.trim().split(/\s+/);
+        if (words.length !== 5) return;
+
+        // 4a
+        const lengths = words.map(w => w.length);
+        if (lengths.every(len => len === lengths[0])) resultA.push(line);
+
+        // 4b
+        const sorted = words.map(w => [...w].sort().join(''));
+        const counts = {};
+        sorted.forEach(w => counts[w] = (counts[w] || 0) + 1);
+        if (Object.values(counts).some(count => count >= 3)) resultB.push(line);
+      });
+
+      odp4a = resultA.join('\n');
+      odp4b = resultB.join('\n');
+
+      document.getElementById('result4a').textContent = odp4a;
+      document.getElementById('result4b').textContent = odp4b;
+      document.getElementById('downloadA').disabled = false;
+      document.getElementById('downloadB').disabled = false;
+    }
+
+    function download(filename, text) {
+      const blob = new Blob([text], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+    }
+  </script>
+</body>
+</html>
