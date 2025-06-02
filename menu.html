@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(tlo.jpg); 
+            background-size: cover; 
+            background-position: center; 
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); 
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #45a049;
+        }
+        .content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .test-section {
+            margin-top: 20px;
+        }
+        .test-section .buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .test-section .buttons a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .test-section .buttons a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Witaj na stronie!</h1>
+        <p>Wybierz jeden z poniższych testów:</p>
+
+        <div class="test-section" id="test1">
+            <h2>Test 1</h2>
+            <div class="buttons">
+                <a href="test1.html">Rozpocznij Test 1</a>
+            </div>
+            <p> Kliknij w przycisk, aby rozpocząć test.</p>
+        </div>
+
+        <div class="test-section" id="test2">
+            <h2>Test 2</h2>
+            <div class="buttons">
+                <a href="test2.html">Rozpocznij Test 2</a>
+            </div>
+            <p> Kliknij w przycisk, aby rozpocząć test.</p>
+        </div>
+
+        <div class="test-section" id="test3">
+            <h2>Test 3</h2>
+            <div class="buttons">
+                <a href="test3.html">Rozpocznij Test 3</a>
+            </div>
+            <p> Kliknij w przycisk, aby rozpocząć test.</p>
+        </div>
+    </div>
+
+</body>
+</html>
