@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+
+    <script>
+        let liczba=prompt("Podaj liczbę","");
+        for (i=1;i<=liczba;i++)
+    {
+        alert(i);
+    }
+    </script>
+
+</body>
+</html>

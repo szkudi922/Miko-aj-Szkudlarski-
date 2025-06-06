@@ -1,0 +1,50 @@
+<script>
+function test()
+{
+switch (prompt("Podaj dowolną liczbę",""))
+{
+
+case "1":
+alert("Wybrałeś miesiąc styczeń");
+break;
+case "2":
+alert("wybrałeś miesiąc luty");
+break;
+case "3":
+alert("wybrałeś miesiąc marzec");
+break;
+case "4":
+alert("wybrałeś miesiąc kwiecień");
+break;
+case "5":
+alert("wybrałeś miesiąc maj");
+break;
+case "6":
+alert("wybrałeś miesiąc czerwiec");
+break;
+case "7":
+alert("wybrałeś miesiąc lipiec");
+break;
+case "8":
+alert("wybrałeś miesiąc sierpień");
+break;
+case "9":
+alert("wybrałeś miesiąc wrzesień");
+break;
+case "10":
+alert("wybrałeś miesiąc październik");
+break;
+case "11":
+alert("wybrałeś miesiąc listopad");
+break;
+case "12":
+alert("wybrałeś miesiąc grudzień");
+break;
+// ... analogicznie kontynuujemy dla 12 miesięcy
+default:
+alert("Podano nr miesiąca inny niż z przedziału 1-12");
+break;
+}
+}
+</script>
+<a href="javascript:test()">kliknij tu</a>

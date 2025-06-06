@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>pobieranie z formularza</title>
+</head>
+<body>
+<script>
+        function formularz()
+        {
+let zmienna1=document.getElementById("liczba1").value;
+let zmienna2=document.getElementById("liczba2").value;
+zmienna1=Number(zmienna1);
+zmienna2=Number(zmienna2);
+let wynik=zmienna1*zmienna2
+document.write(wynik);
+        }
+</script>
+<form>
+podaj pierwszą liczbe:<input type="number" id="liczba1"><br>
+podaj drugą liczbe:<input type="number" id="liczba2"><br>
+    <input type="button" value="uruchom" onClick="formularz()">
+</form>
+</body>
+</html>

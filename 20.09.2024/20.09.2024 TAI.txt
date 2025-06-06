@@ -1,0 +1,26 @@
+<html>
+
+
+
+<head>
+
+</head>
+
+
+
+<body>
+
+<script [language="javascript">
+alert("Witaj!");
+let name=prompt("Podaj imię","");
+let secname=prompt("Podaj nazwisko","");
+alert("Witaj "+name+" "+secname);
+let wiek=prompt("Podaj wiek","");
+alert(name+" "+secname+" masz "+wiek+" lat");
+</script>
+
+</body>
+
+
+
+</html>

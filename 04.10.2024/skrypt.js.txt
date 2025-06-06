@@ -1,0 +1,8 @@
+function test()
+{
+	
+alert ("Witaj");
+
+document.write("<b>Tekst</b>");
+
+}

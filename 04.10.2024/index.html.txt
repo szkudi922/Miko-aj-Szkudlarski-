@@ -1,0 +1,23 @@
+<html>
+<head>
+
+<script [language="javascript" src="skrypt.js">
+</script>
+
+</head>
+
+<body>
+
+Moja strona.
+<br>
+
+<a href="javascript:test()">
+kliknij tu</a>
+<br>
+
+<input type="button" value="klik" onClick="test()">
+
+
+
+</body>
+</html>

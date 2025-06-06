@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+
+    <script>
+        let liczba=prompt("Podaj liczbę","");
+        let tablica="";
+        for (i=1;i<=10;i++)
+    {
+        tablica+=(i+" x "+liczba+" = "+i*liczba+"\n");
+    }
+    alert(tablica);
+    </script>
+
+</body>
+</html>

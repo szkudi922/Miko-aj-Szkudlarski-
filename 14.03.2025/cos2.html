@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>TAI 14.03.2025</title>
+</head>
+<body>
+<script>
+        function formularz()
+        {
+let zmienna1=document.getElementById("liczba1").value;
+let zmienna2=document.getElementById("liczba2").value;
+zmienna1=Number(zmienna1);
+zmienna2=Number(zmienna2);
+let wynik= 1;
+for(let i=0; i < zmienna2; i++)
+{
+    wynik *= zmienna1;
+}
+document.write(wynik);
+        }
+</script>
+<form>
+Podaj liczbę: <input type="number" id="liczba1"><br>
+Podaj potęgę: <input type="number" id="liczba2"><br>
+    <input type="button" value="uruchom" onClick="formularz()">
+</form>
+</body>
+</html>

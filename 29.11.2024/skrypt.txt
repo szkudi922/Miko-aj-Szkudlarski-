@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+<body>
+<script>
+//starszy zapis
+    //const tablica1 = [];
+    //const tablica2 = [1, 2, 3, 4];
+    //const tablica3 = ["Marcin", "Ania", "Agnieszka"];
+    //const tablica4 = new Array("Ala", "Ola", "Ela");
+    //console.log(tablica4);
+
+    //const tablica5 = ["Ala", "ma", "rudego", "kota"];
+    //console.log( tablica5[0] ); //Ala
+    //console.log( tablica5[1] ); //ma
+    //console.log( tablica5[2] ); //rudego
+    //console.log( tablica5[3] ); //kota
+    //console.log( tablica5[tablica.length-2] );
+
+//nowszy zapis
+    //tabela5.at(1); //ma
+    //tabela5.at(2); //rudego
+    //tabela5.at(-1); //kota
+    //tabela5.at(-2); //rudego
+
+    const tablica6 = ["Mariusz", "Ania", "Agnieszka"];
+    //console.log( tablica6.length ); //3
+    //console.log( tablica6[ tablica6.length-1 ] ); //Agnieszka
+
+    for (let i=0; i<tablica6.length; i++)
+{
+    console.log(tablica6[i]);
+}
+
+    tablica6.push("Piotrek", "Janek");
+    console.log(tablica6); //Marcin, Ania, Agnieszka, Piotrek, Janek
+</script>
+</body>
+</html>

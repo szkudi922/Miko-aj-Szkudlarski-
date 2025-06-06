@@ -1,0 +1,18 @@
+<html>
+
+
+<head>
+
+</head>
+
+
+<body>
+
+<script [language="javascript">
+alert("Witaj!");
+</script>
+
+</body>
+
+
+</html>
